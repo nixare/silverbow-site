@@ -73,14 +73,8 @@ function setLang(l) {
         <li><span lang="en">No account, plays offline</span><span lang="it">Senza account, anche offline</span></li>
       </ul>
       <div class="stores" id="get">
-        <a class="store store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site&amp;mt=8">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v7m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><small lang="en">Free on the</small><small lang="it">Gratis su</small><b>App Store</b></span>
-        </a>
-        <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          <span><small lang="en">Free on</small><small lang="it">Gratis su</small><b>Google Play</b></span>
-        </a>
+        <a class="badge store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site&amp;mt=8"><img src="img/badge_apple.svg" alt="Download on the App Store" width="150" height="50"></a>
+        <a class="badge store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite"><img lang="en" src="img/badge_play_en.webp" alt="Get it on Google Play" width="194" height="75"><img lang="it" src="img/badge_play_it.webp" alt="Disponibile su Google Play" width="194" height="75"></a>
       </div>
     </div>
     <div class="phone" aria-label="A level of Silverbow in the sunset canyon" role="img">
@@ -129,104 +123,57 @@ if (document.documentElement.classList.contains("it")) { var r = document.getEle
   </div>
 </section>
 
-<section aria-labelledby="realms">
+<section aria-labelledby="more">
   <div class="wrap">
-    <p class="kicker"><span lang="en">The Realms</span><span lang="it">Le Contrade</span></p>
-    <h2 class="section-title" id="realms"><span lang="en">Sixty levels, twelve places</span><span lang="it">Sessanta livelli, dodici posti</span></h2>
-    <p class="section-lede">
-      <span lang="en">Each place has its own light and its own life, and every level asks something different: a number of golds, never below a ring, beating an archer who has already shot, one arrow that counts, six against the clock.</span>
-      <span lang="it">Ogni posto ha la sua luce e la sua vita, e ogni livello chiede qualcosa di diverso: un numero di gialli, nessuna freccia sotto un anello, battere un arciere che ha già tirato, un solo tiro che vale tutto, sei frecce contro il tempo.</span>
-    </p>
-    <div class="map">
-      <ol class="zones" role="list" style="list-style:none">
-        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 1–15</span>
-          <h3><span lang="en">Morning Meadow</span><span lang="it">Prato del mattino</span></h3>
-          <p><span lang="en">Rabbits and butterflies, an orchard with swinging apples, a farm pond with ducks and a weathervane.</span><span lang="it">Conigli e farfalle, un frutteto con le mele che dondolano, un laghetto con le anatre e la banderuola.</span></p><div class="trail"></div></li>
-        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 16–30</span>
-          <h3><span lang="en">Windy Hill</span><span lang="it">Collina ventosa</span></h3>
-          <p><span lang="en">Windmills and sheep, a windy beach with gulls, sea cliffs with a lighthouse.</span><span lang="it">Mulini e pecore, una spiaggia ventosa con i gabbiani, la scogliera con il faro.</span></p><div class="trail"></div></li>
-        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 31–45</span>
-          <h3><span lang="en">Autumn Wood</span><span lang="it">Bosco d'autunno</span></h3>
-          <p><span lang="en">Falling leaves and a passing deer, a misty marsh with fireflies, a snowy forest with a smoking cabin.</span><span lang="it">Foglie che cadono e un cervo che passa, una palude nella nebbia con le lucciole, un bosco innevato con la baita.</span></p><div class="trail"></div></li>
-        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 46–60</span>
-          <h3><span lang="en">Sunset Arena</span><span lang="it">Arena del tramonto</span></h3>
-          <p><span lang="en">A castle with torches in the wind, a red canyon with an eagle, an arena by night with the crowd.</span><span lang="it">Un castello con le torce nel vento, un canyon rosso con un'aquila, un'arena di notte con il pubblico.</span></p><div class="trail"></div></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="modes">
-  <div class="wrap">
-    <p class="kicker"><span lang="en">More to shoot at</span><span lang="it">Altro da colpire</span></p>
-    <h2 class="section-title" id="modes"><span lang="en">Bonus stages, Guardians, rivals</span><span lang="it">Bonus, Guardiani, rivali</span></h2>
-    <div class="modes">
-      <article class="mode red"><div>
-        <h3><span lang="en">Daily challenge</span><span lang="it">Sfida del giorno</span></h3>
-        <p><span lang="en">The same wind and distance for everyone, every day. Keep the streak going for bigger rewards.</span><span lang="it">Stesso vento e stessa distanza per tutti, ogni giorno. Tieni viva la serie per premi più grandi.</span></p></div></article>
-      <article class="mode blue"><div>
-        <h3><span lang="en">Compete</span><span lang="it">Gara</span></h3>
-        <p><span lang="en">A weekend tournament against four archers, one-on-one matches in sets, and challenges sent to friends with a link.</span><span lang="it">Un torneo nel weekend contro quattro arcieri, sfide uno contro uno a set, e sfide agli amici con un link.</span></p></div></article>
-      <article class="mode green"><div>
-        <h3><span lang="en">Bonus stages</span><span lang="it">Livelli bonus</span></h3>
-        <p><span lang="en">Balloons, clays, swinging apples, a carousel, wooden birds, a running deer and a very distant gong.</span><span lang="it">Palloncini, piattelli, mele che dondolano, una giostra, uccelli di legno, un cervo che corre e un gong lontanissimo.</span></p></div></article>
-      <article class="mode black"><div>
-        <h3><span lang="en">Guardians</span><span lang="it">Guardiani</span></h3>
-        <p><span lang="en">At the end of each zone a wheel of medallions turns: hit them as they light up, three times, and watch it fall.</span><span lang="it">Alla fine di ogni zona gira una ruota di medaglioni: colpiscili quando si accendono, tre volte, e guardala cadere.</span></p></div></article>
-      <article class="mode red"><div>
-        <h3>Robin Hood</h3>
-        <p><span lang="en">Hit the nock of the arrow already in the gold and split it in two. Combos set your arrows on fire.</span><span lang="it">Colpisci la cocca della freccia già nel giallo e aprila in due. Le combo danno fuoco alle frecce.</span></p></div></article>
-      <article class="mode blue"><div>
-        <h3><span lang="en">Armory</span><span lang="it">Armeria</span></h3>
-        <p><span lang="en">From a simple stave to the full olympic recurve, arrows that cut the wind, fletchings and special arrows.</span><span lang="it">Da una doga semplice all'olimpico completo, frecce che tagliano il vento, alette e frecce speciali.</span></p></div></article>
-    </div>
+    <h2 class="section-title" id="more"><span lang="en">Bonus stages, Guardians, rivals</span><span lang="it">Bonus, Guardiani e rivali</span></h2>
+    <article class="feature" aria-labelledby="f-bonus">
+      <div class="feature-copy">
+        <p class="kicker"><span lang="en">Bonus stages</span><span lang="it">Livelli bonus</span></p>
+        <h3 id="f-bonus"><span lang="en">Targets that move</span><span lang="it">Bersagli che si muovono</span></h3>
+        <p><span lang="en">Between levels the target gives way to balloons rising in the wind, clays thrown across the sky, swinging apples, a fairground carousel, wooden birds and a deer running on its rail. Only hits count: lead your shot.</span><span lang="it">Tra un livello e l'altro il bersaglio lascia il posto a palloncini che salgono nel vento, piattelli lanciati in cielo, mele che dondolano, una giostra da fiera, uccelli di legno e un cervo che corre sul binario. Contano solo i colpiti: anticipa il tiro.</span></p>
+      </div>
+      <div class="phones">
+        <figure><img lang="en" src="img/shot_en_5.webp" alt="The carousel: eight small targets on a turning wheel" width="460" height="1000" loading="lazy"><img lang="it" src="img/shot_it_5.webp" alt="La giostra: otto bersagli piccoli su una ruota che gira" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/bonus_2_en.webp" alt="Wooden birds crossing the sky" width="460" height="1000" loading="lazy"><img lang="it" src="img/bonus_2_it.webp" alt="Uccelli di legno che attraversano il cielo" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/bonus_3_en.webp" alt="A wooden deer running on its rail by the sea" width="460" height="1000" loading="lazy"><img lang="it" src="img/bonus_3_it.webp" alt="Un cervo di legno che corre sul binario in riva al mare" width="460" height="1000" loading="lazy"></figure>
+      </div>
+    </article>
+    <article class="feature flip" aria-labelledby="f-guard">
+      <div class="feature-copy">
+        <p class="kicker"><span lang="en">Guardians</span><span lang="it">Guardiani</span></p>
+        <h3 id="f-guard"><span lang="en">Three hits to bring it down</span><span lang="it">Tre colpi per abbatterlo</span></h3>
+        <p><span lang="en">At the end of each zone a Guardian waits: a giant wheel whose medallions light up one at a time. Hit the lit one, three times, before your arrows run out, and watch it fall.</span><span lang="it">Alla fine di ogni zona ti aspetta un Guardiano: una ruota gigante con i medaglioni che si accendono uno alla volta. Colpisci quello acceso, tre volte, prima di finire le frecce, e guardalo cadere.</span></p>
+      </div>
+      <div class="phones">
+        <figure><img lang="en" src="img/guard_1_en.webp" alt="The Meadow Guardian by the red barn" width="460" height="1000" loading="lazy"><img lang="it" src="img/guard_1_it.webp" alt="Il Guardiano del Prato accanto al fienile rosso" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/guard_2_en.webp" alt="The Forest Spirit in the snow" width="460" height="1000" loading="lazy"><img lang="it" src="img/guard_2_it.webp" alt="Lo Spirito del Bosco nella neve" width="460" height="1000" loading="lazy"></figure>
+      </div>
+    </article>
+    <article class="feature" aria-labelledby="f-rivals">
+      <div class="feature-copy">
+        <p class="kicker"><span lang="en">Rivals</span><span lang="it">Rivali</span></p>
+        <h3 id="f-rivals"><span lang="en">Someone to beat</span><span lang="it">Qualcuno da battere</span></h3>
+        <p><span lang="en">Archers who have already shot and wait for you to do better, a weekend tournament against four of them, one-on-one matches in sets, a daily challenge with the same wind for everyone, and challenges sent to friends with a link.</span><span lang="it">Arcieri che hanno già tirato e aspettano che tu faccia meglio, un torneo nel weekend contro quattro di loro, sfide uno contro uno a set, una sfida del giorno con lo stesso vento per tutti, e sfide agli amici con un link.</span></p>
+      </div>
+      <div class="phones">
+        <figure><img lang="en" src="img/shot_en_7.webp" alt="The weekend tournament against four archers" width="460" height="1000" loading="lazy"><img lang="it" src="img/shot_it_7.webp" alt="Il torneo del weekend contro quattro arcieri" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/rival_2_en.webp" alt="Beat Tomás, who has already shot, in the rain" width="460" height="1000" loading="lazy"><img lang="it" src="img/rival_2_it.webp" alt="Batti Tomás, che ha già tirato, sotto la pioggia" width="460" height="1000" loading="lazy"></figure>
+      </div>
+    </article>
   </div>
 </section>
 
 <section aria-labelledby="look">
   <div class="wrap">
-    <p class="kicker"><span lang="en">Inside the game</span><span lang="it">Dentro il gioco</span></p>
-    <h2 class="section-title" id="look"><span lang="en">Take a closer look</span><span lang="it">Guarda da vicino</span></h2>
-    <div class="strip" lang="en" tabindex="0" aria-label="Screenshots">
-      <figure><img src="img/shot_en_1.webp" alt="The home: a wooden sign to play, leather tiles for daily, compete, armory and train" width="460" height="1000" loading="lazy"><figcaption>The home</figcaption></figure>
-      <figure><img src="img/shot_en_2.webp" alt="Aiming at 45 metres in the sunset canyon, wind from the left" width="460" height="1000" loading="lazy"><figcaption>45 m in the canyon</figcaption></figure>
-      <figure><img src="img/shot_en_3.webp" alt="Robin Hood: an arrow splits the one already in the gold" width="460" height="1000" loading="lazy"><figcaption>Robin Hood!</figcaption></figure>
-      <figure><img src="img/shot_en_4.webp" alt="The Realms: levels as wax seals on an old parchment map" width="460" height="1000" loading="lazy"><figcaption>The Realms</figcaption></figure>
-      <figure><img src="img/shot_en_5.webp" alt="Bonus stage: a fairground carousel with eight small targets" width="460" height="1000" loading="lazy"><figcaption>The carousel</figcaption></figure>
-      <figure><img src="img/shot_en_6.webp" alt="The Armory: the bow on its stand, four bows to choose from" width="460" height="1000" loading="lazy"><figcaption>The Armory</figcaption></figure>
-      <figure><img src="img/shot_en_7.webp" alt="Compete: weekend tournament against four archers" width="460" height="1000" loading="lazy"><figcaption>Weekend tournament</figcaption></figure>
-    </div>
-    <div class="strip" lang="it" tabindex="0" aria-label="Schermate">
-      <figure><img src="img/shot_it_1.webp" alt="La home: l'insegna di legno per giocare, le caselle di cuoio per giorno, gara, armeria e allenamento" width="460" height="1000" loading="lazy"><figcaption>La home</figcaption></figure>
-      <figure><img src="img/shot_it_2.webp" alt="La mira a 45 metri nel canyon al tramonto" width="460" height="1000" loading="lazy"><figcaption>45 m nel canyon</figcaption></figure>
-      <figure><img src="img/shot_it_3.webp" alt="Robin Hood: una freccia apre in due quella già nel giallo" width="460" height="1000" loading="lazy"><figcaption>Robin Hood!</figcaption></figure>
-      <figure><img src="img/shot_it_4.webp" alt="Le Contrade: i livelli come sigilli di ceralacca su una mappa di pergamena" width="460" height="1000" loading="lazy"><figcaption>Le Contrade</figcaption></figure>
-      <figure><img src="img/shot_it_5.webp" alt="Livello bonus: la giostra con otto bersagli piccoli" width="460" height="1000" loading="lazy"><figcaption>La giostra</figcaption></figure>
-      <figure><img src="img/shot_it_6.webp" alt="L'Armeria: l'arco sul piedistallo, quattro archi fra cui scegliere" width="460" height="1000" loading="lazy"><figcaption>L'Armeria</figcaption></figure>
-      <figure><img src="img/shot_it_7.webp" alt="Gara: il torneo del weekend contro quattro arcieri" width="460" height="1000" loading="lazy"><figcaption>Il torneo del weekend</figcaption></figure>
+    <h2 class="section-title" id="look"><span lang="en">Sixty levels, twelve places</span><span lang="it">Sessanta livelli, dodici posti</span></h2>
+    <div class="strip" tabindex="0" aria-label="Screenshots / Schermate">
+      <figure><img lang="en" src="img/shot_en_2.webp" alt="Aiming at 45 metres in the sunset canyon" width="460" height="1000" loading="lazy"><img lang="it" src="img/shot_it_2.webp" alt="La mira a 45 metri nel canyon al tramonto" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/place_2_en.webp" alt="The snowy forest at 60 metres" width="460" height="1000" loading="lazy"><img lang="it" src="img/place_2_it.webp" alt="Il bosco innevato a 60 metri" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/shot_en_3.webp" alt="Robin Hood: an arrow splits the one in the gold" width="460" height="1000" loading="lazy"><img lang="it" src="img/shot_it_3.webp" alt="Robin Hood: una freccia apre in due quella nel giallo" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/place_3_en.webp" alt="The arena with the crowd, against the clock" width="460" height="1000" loading="lazy"><img lang="it" src="img/place_3_it.webp" alt="L'arena con il pubblico, contro il tempo" width="460" height="1000" loading="lazy"></figure>
+        <figure><img lang="en" src="img/shot_en_4.webp" alt="The Realms: levels as wax seals on a parchment map" width="460" height="1000" loading="lazy"><img lang="it" src="img/shot_it_4.webp" alt="Le Contrade: i livelli come sigilli di ceralacca su una mappa di pergamena" width="460" height="1000" loading="lazy"></figure>
     </div>
     <p class="strip-hint" aria-hidden="true"><span lang="en">Swipe →</span><span lang="it">Scorri →</span></p>
-  </div>
-</section>
-
-<section aria-labelledby="fair">
-  <div class="wrap fair">
-    <div>
-      <p class="kicker"><span lang="en">Free and fair</span><span lang="it">Gratis e onesto</span></p>
-      <h2 class="section-title" id="fair"><span lang="en">Earned, not bought</span><span lang="it">Si guadagna, non si compra</span></h2>
-      <ul>
-        <li><span><span lang="en">Everything that improves your shot is earned by playing: coins buy steadier bows and arrows that cut the wind.</span><span lang="it">Tutto ciò che migliora il tiro si guadagna giocando: le monete comprano archi più stabili e frecce che tagliano il vento.</span></span></li>
-        <li><span><span lang="en">No banners, no forced ads. A video only when you choose one, for a reward.</span><span lang="it">Niente banner, niente pubblicità forzata. Un video solo quando lo scegli tu, in cambio di un premio.</span></span></li>
-        <li><span><span lang="en">No account, no energy, no timers to wait out. It plays offline.</span><span lang="it">Niente account, niente energia, niente attese. Si gioca anche offline.</span></span></li>
-      </ul>
-    </div>
-    <figure class="pass">
-      <img src="img/pass.webp" alt="The two Archer Pass fletchings, crossed" width="880" height="600" loading="lazy">
-      <figcaption>
-        <h3><span lang="en">Archer Pass</span><span lang="it">Pass Arciere</span></h3>
-        <p><span lang="en">One optional purchase, for looks only: rewards without videos, two exclusive fletchings, the Silver Archer badge.</span><span lang="it">Un solo acquisto facoltativo, solo estetico: premi senza video, due alette esclusive, il badge Arciere d'argento.</span></p>
-      </figcaption>
-    </figure>
   </div>
 </section>
 
@@ -236,14 +183,8 @@ if (document.documentElement.classList.contains("it")) { var r = document.getEle
       <h2 class="section-title" id="final"><span lang="en">The first target is waiting</span><span lang="it">Il primo bersaglio ti aspetta</span></h2>
       <p class="section-lede"><span lang="en">Free on iPhone and Android. No account: open it and shoot.</span><span lang="it">Gratis su iPhone e Android. Nessun account: apri e tira.</span></p>
       <div class="stores">
-        <a class="store store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site&amp;mt=8">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v7m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><small lang="en">Free on the</small><small lang="it">Gratis su</small><b>App Store</b></span>
-        </a>
-        <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          <span><small lang="en">Free on</small><small lang="it">Gratis su</small><b>Google Play</b></span>
-        </a>
+        <a class="badge store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site&amp;mt=8"><img src="img/badge_apple.svg" alt="Download on the App Store" width="150" height="50"></a>
+        <a class="badge store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite"><img lang="en" src="img/badge_play_en.webp" alt="Get it on Google Play" width="194" height="75"><img lang="it" src="img/badge_play_it.webp" alt="Disponibile su Google Play" width="194" height="75"></a>
       </div>
     </div>
     <figure class="qr">
