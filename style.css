@@ -148,9 +148,12 @@ html.apple body,html.android body{padding-bottom:84px}
 
 /* Maker and support */
 .maker{display:grid;gap:18px;align-items:center}
-.maker img{width:96px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.maker blockquote{margin:0;font:700 clamp(19px,4.4vw,25px)/1.4 var(--display);color:var(--cream)}
-.maker blockquote .hl{color:var(--gold)}
+.studio{display:inline-grid;place-items:center;width:96px;height:96px;border-radius:22px;background:#0F1217;border:1px solid var(--line);
+  color:var(--cream);text-decoration:none;font:700 15px/1 ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.06em;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.maker-line{margin:0 0 8px;font:700 clamp(20px,4.6vw,26px)/1.35 var(--display);color:var(--cream)}
+.maker p{margin:0}
+.more{font-weight:700;text-decoration:none}
+.more:hover{text-decoration:underline}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px}
 .card h2{font-size:32px;margin-bottom:10px}
 .card p{margin:0 0 14px}
