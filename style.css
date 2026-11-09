@@ -1,0 +1,239 @@
+/* Silverbow — the site dressed as the game: the field at dusk, the wooden sign, the quiver's dyed
+   leather, gold for the bullseye. Cinzel is the game's own title font (SIL OFL, see fonts/OFL.txt).
+   Wood and leather are the game's Blender renders. */
+@font-face{font-family:"Cinzel";src:url(fonts/Cinzel.woff2) format("woff2");font-weight:400 900;font-display:swap}
+
+:root{
+  --navy:#0E1B2A; --navy-2:#13263A; --panel:#16293D; --line:rgba(201,211,221,.14);
+  --gold:#F2B134; --gold-ink:#2A1D05; --soft:#C9D3DD; --muted:#9FB0C2; --cream:#FFF2DB; --tan:#E8CFA8;
+  --burnt:#3B2410; --red:#E2422F; --blue:#3E7CC0; --mint:#5DCAA5; --silver:#DDE3E9;
+  --gutter:16px; --radius:16px;
+  --display:"Cinzel","Trajan Pro",Georgia,serif;
+  --sans:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--navy);color:var(--soft);font:16px/1.6 var(--sans);overflow-x:hidden}
+img,video{max-width:100%;height:auto;display:block}
+a{color:var(--gold)}
+h1,h2,h3{font-family:var(--display);font-weight:900;line-height:1.05;letter-spacing:.02em;margin:0;color:var(--cream)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+
+/* Language: English first (the game's main language); the switch or an Italian browser shows Italian. */
+html:not(.it) .i18n [lang=it]{display:none}
+html.it .i18n [lang=en]{display:none}
+
+/* Top bar */
+.top{position:absolute;inset:0 0 auto 0;z-index:5}
+.top .wrap,.page-top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--cream);text-decoration:none;font:900 21px var(--display);letter-spacing:.04em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:rgba(14,27,42,.6)}
+.lang button{all:unset;cursor:pointer;padding:6px 12px;font:700 13px var(--sans);color:var(--muted)}
+html:not(.it) .lang [data-l=en],html.it .lang [data-l=it]{background:var(--gold);color:var(--gold-ink)}
+.lang button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+
+/* Hero: the field at dusk, the target's rings faint, gold dust rising */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;isolation:isolate;padding-bottom:40px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-3;
+  background:radial-gradient(120% 70% at 70% 100%,rgba(242,177,52,.30),transparent 60%),
+             linear-gradient(180deg,#0B1622 0%,#132a40 55%,#2b2f35 82%,#3a2d1e 100%)}
+.rings{position:absolute;z-index:-2;width:150vmax;height:150vmax;left:72%;top:58%;transform:translate(-50%,-50%);pointer-events:none;
+  background:repeating-radial-gradient(circle,transparent 0 58px,rgba(201,211,221,.07) 58px 60px);
+  -webkit-mask:radial-gradient(closest-side,#000 30%,transparent);mask:radial-gradient(closest-side,#000 30%,transparent)}
+.hills{position:absolute;inset:auto 0 0 0;height:30%;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 100% at 20% 100%,#1d2a22 60%,transparent 61%),radial-gradient(80% 90% at 85% 100%,#18241d 60%,transparent 61%);opacity:.9}
+.dust{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.dust i{position:absolute;bottom:-10px;width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:0;box-shadow:0 0 6px rgba(242,177,52,.8);animation:rise 14s linear infinite}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.7}85%{opacity:.5}100%{transform:translateY(-90vh) translateX(30px);opacity:0}}
+.hero .wrap{padding-top:84px;padding-bottom:24px;width:100%}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:34px;align-items:center}
+.hero-copy{min-width:0}
+.title-row{display:flex;align-items:center;gap:clamp(14px,3vw,24px)}
+.app-icon{width:clamp(48px,14vw,128px);aspect-ratio:1;border-radius:22.5%;flex:none;box-shadow:0 10px 30px rgba(0,0,0,.55),0 0 40px rgba(242,177,52,.22)}
+/* The wordmark: SILVER in chrome, BOW in gold, as in the game */
+.wordmark{font-size:clamp(28px,9.2vw,104px);letter-spacing:.03em;line-height:1;min-width:0;filter:drop-shadow(0 3px 0 rgba(0,0,0,.45)) drop-shadow(0 0 24px rgba(0,0,0,.35))}
+.wordmark span{background-clip:text;-webkit-background-clip:text;color:transparent}
+.wordmark .s{background-image:linear-gradient(180deg,#fff 0%,#dfe5ea 38%,#8f9aa5 52%,#e9eef2 70%,#b9c2ca 100%)}
+.wordmark .b{background-image:linear-gradient(180deg,#ffe7a6 0%,#f6c451 40%,#b9791a 54%,#f2b134 72%,#c98a1f 100%)}
+.tagline{font:700 clamp(24px,6.4vw,36px)/1.15 var(--display);color:var(--gold);margin:14px 0 12px}
+.hook{max-width:33rem;font-size:clamp(17px,4.4vw,20px);line-height:1.5;color:rgba(255,242,219,.9);margin:0 0 18px}
+.hook em{font-style:normal;color:var(--cream);font-weight:700}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0}
+.chips li{font:700 13px/1 var(--sans);padding:8px 12px;border-radius:999px;border:1px solid rgba(242,177,52,.45);background:rgba(14,27,42,.55);color:var(--cream)}
+
+/* Store buttons: planks of wood with the words burnt in, like the game's buttons */
+.stores{display:flex;flex-wrap:wrap;gap:14px}
+.store{display:inline-flex;align-items:center;gap:12px;flex:1 1 210px;max-width:280px;padding:0 6px;text-decoration:none;color:var(--burnt);
+  border:14px solid transparent;border-image:url(img/plank.webp) 28 fill / 14px stretch;min-height:64px;
+  filter:drop-shadow(0 6px 0 rgba(0,0,0,.35));transition:transform .15s ease,filter .15s ease}
+.store:hover{transform:translateY(-2px) rotate(-.4deg)}
+.store:active{transform:translateY(2px);filter:drop-shadow(0 2px 0 rgba(0,0,0,.35))}
+.store svg{width:26px;height:26px;flex:none}
+.store small{display:block;font:700 11px/1.1 var(--sans);letter-spacing:.05em;opacity:.8}
+.store b{display:block;font:900 19px/1.15 var(--display);letter-spacing:.02em}
+.store:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+/* The visitor's own store first */
+html.android .store-play{order:-1}
+.soon{margin:14px 0 0;font-size:14px;color:var(--muted)}
+.soon a{color:var(--gold)}
+
+.phone{justify-self:center;width:min(64vw,270px);aspect-ratio:1206/2622;border-radius:42px;padding:9px;background:#05090e;
+  border:1px solid rgba(201,211,221,.18);box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 90px rgba(242,177,52,.18);transform:rotate(2deg)}
+.phone video{width:100%;height:100%;object-fit:cover;border-radius:34px;background:var(--navy)}
+.scroll-cue{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);color:var(--muted);text-decoration:none;font-size:22px;animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{50%{transform:translate(-50%,6px)}}
+
+/* Sections */
+section{padding:64px 0}
+.section-title{font-size:clamp(32px,8vw,52px);margin-bottom:12px}
+.section-lede{max-width:40rem;color:rgba(201,211,221,.9);margin:0 0 30px;font-size:17px}
+
+/* How it plays: the hanging sign with three steps burnt in */
+.sign{position:relative;margin:0 auto;max-width:900px}
+.beam{height:22px;margin:0 -8px;border-image:url(img/beam.webp) 0 40 fill / 0 20px stretch;
+  background:linear-gradient(#a8703d,#7b4d26);border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.ropes{display:flex;justify-content:space-around;height:34px}
+.ropes span{width:4px;background:repeating-linear-gradient(45deg,#c9a46a 0 3px,#8f6c3b 3px 6px);border-radius:2px}
+.board{border:22px solid transparent;border-image:url(img/plank.webp) 28 fill / 22px stretch;color:var(--burnt);padding:6px 4px;
+  filter:drop-shadow(0 12px 20px rgba(0,0,0,.45));transform-origin:50% -60px;animation:sway 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-.5deg)}50%{transform:rotate(.5deg)}}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:1fr}
+.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.step .n{font:900 34px/1 var(--display);color:var(--burnt);opacity:.85;text-shadow:0 1px 0 rgba(255,220,170,.35)}
+.step h3{font-size:24px;color:var(--burnt);margin:2px 0 4px;text-shadow:0 1px 0 rgba(255,220,170,.35)}
+.step p{margin:0;font-size:15.5px;line-height:1.5;color:#4a2e14;font-weight:600}
+.after{display:grid;gap:12px;margin-top:30px;grid-template-columns:1fr}
+.note{display:flex;gap:12px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.note svg{width:28px;height:28px;flex:none;color:var(--gold);margin-top:2px}
+.note b{color:var(--cream)}
+.note p{margin:0;font-size:15px}
+
+/* Realms: the four zones on parchment */
+.map{background:#efe2c4;color:#4b3219;border-radius:10px;padding:22px 18px;position:relative;box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 0 60px rgba(120,80,30,.35);transform:rotate(-.4deg)}
+.map::after{content:"";position:absolute;inset:0;border-radius:10px;pointer-events:none;box-shadow:inset 0 0 0 2px rgba(90,55,20,.25),inset 0 0 26px rgba(70,35,5,.35)}
+.zones{list-style:none;margin:0;padding:0;display:grid;gap:18px;grid-template-columns:1fr}
+.zone h3{font-size:22px;color:#5a3414;margin-bottom:2px;transform:rotate(-1deg)}
+.zone .lv{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#a0281c}
+.zone p{margin:4px 0 0;font-size:15px;line-height:1.5;font-style:italic}
+.trail{height:0;border-top:3px dashed #a0281c;opacity:.6;margin:6px 0 0}
+
+/* Modes: the quiver's dyed leather, one color per place, as on the home screen */
+.modes{display:grid;grid-template-columns:1fr;gap:14px}
+.mode{border:40px solid transparent;border-image-slice:96 fill;border-image-width:40px;border-image-repeat:stretch;padding:4px 10px 6px;min-height:170px;
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.35))}
+.mode.red{border-image-source:url(img/leather_red.webp)}
+.mode.blue{border-image-source:url(img/leather_blue.webp)}
+.mode.black{border-image-source:url(img/leather_black.webp)}
+.mode.green{border-image-source:url(img/leather_green.webp)}
+.mode h3{font-size:24px;color:var(--cream);margin-bottom:6px;text-shadow:0 -1px 0 rgba(0,0,0,.5)}
+.mode p{margin:0;font-size:15px;color:var(--tan);line-height:1.5}
+
+/* Screens strip */
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gutter) 22px;margin:0 calc(-1 * var(--gutter));
+  scrollbar-width:thin;scrollbar-color:var(--panel) transparent;-webkit-overflow-scrolling:touch}
+.strip figure{margin:0;flex:0 0 auto;width:min(62vw,240px);scroll-snap-align:center}
+.strip img{width:100%;aspect-ratio:1206/2622;border-radius:22px;background:var(--panel);box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.strip figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;text-align:center}
+.strip:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.strip-hint{font-size:13px;color:var(--muted);margin:0}
+
+/* Fair */
+.fair{display:grid;gap:26px;align-items:center}
+.fair ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.fair li{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;font-size:16px}
+.fair li::before{content:"";width:22px;height:22px;margin-top:1px;border-radius:50%;
+  background:radial-gradient(circle,var(--gold) 0 4px,var(--red) 4.5px 7px,var(--blue) 7.5px 9.5px,#111 10px 11px)}
+.pass{border-radius:var(--radius);overflow:hidden;position:relative;border:1px solid rgba(221,227,233,.35);margin:0;background:#0c1520}
+.pass img{width:100%;aspect-ratio:880/600;object-fit:cover}
+.pass figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 16px;background:linear-gradient(transparent,rgba(10,18,28,.96))}
+.pass h3{font-size:28px;color:var(--silver)}
+.pass p{margin:4px 0 0;color:rgba(221,227,233,.9);font-size:15px}
+
+/* The last call */
+.final{position:relative;overflow:hidden;isolation:isolate}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(80% 90% at 50% 120%,rgba(242,177,52,.22),transparent 70%)}
+.final-grid{display:grid;gap:28px;align-items:center}
+.qr{margin:0;display:none;flex-direction:column;align-items:center;gap:10px;color:var(--muted);font-size:14px}
+.qr img{width:164px;height:164px;border-radius:12px;padding:10px;background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+html:not(.android):not(.apple) .qr{display:flex}
+
+/* The dock: a phone's bar with its own store, once the hero is past */
+.dock{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:20;display:none;align-items:center;gap:12px;
+  padding:10px 10px 10px 12px;border-radius:16px;background:rgba(22,41,61,.95);border:1px solid rgba(242,177,52,.35);
+  box-shadow:0 12px 30px rgba(0,0,0,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  transform:translateY(140%);transition:transform .25s ease}
+.dock img{width:40px;height:40px;border-radius:10px}
+.dock div{flex:1;min-width:0}
+.dock b{display:block;font:900 17px/1.1 var(--display);color:var(--cream)}
+.dock small{display:block;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock-get{display:none;font:800 15px var(--sans);color:var(--gold-ink);background:var(--gold);padding:10px 18px;border-radius:10px;text-decoration:none}
+html.apple .dock,html.android .dock{display:flex}
+html.apple .dock .store-apple,html.android .dock .store-play{display:inline-block}
+.dock.on{transform:none}
+html.apple body,html.android body{padding-bottom:84px}
+
+/* Maker and support */
+.maker{display:grid;gap:18px;align-items:center}
+.maker img{width:96px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.maker blockquote{margin:0;font:700 clamp(19px,4.4vw,25px)/1.4 var(--display);color:var(--cream)}
+.maker blockquote .hl{color:var(--gold)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px 20px}
+.card h2{font-size:32px;margin-bottom:10px}
+.card p{margin:0 0 14px}
+.mail{display:inline-block;font:800 16px var(--sans);color:var(--gold-ink);background:var(--gold);padding:10px 16px;border-radius:10px;text-decoration:none;overflow-wrap:anywhere}
+.mail:focus-visible{outline:3px solid var(--cream);outline-offset:3px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{color:var(--soft);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+/* Text pages: privacy, the store link. Parchment, like the map of the Realms. */
+.page-top{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(242,177,52,.10),transparent)}
+.page-top nav{display:flex;gap:16px;font-size:14px}
+.page-top nav a{color:var(--soft);text-decoration:none}
+.page-top nav a:hover,.page-top nav a[aria-current]{color:var(--gold)}
+.doc{max-width:46rem;margin:28px auto 56px;padding:0 var(--gutter)}
+.paper{background:#f3e8cf;color:#3a2a1a;border-radius:8px;padding:26px 20px 14px;box-shadow:0 18px 40px rgba(0,0,0,.45),inset 0 0 50px rgba(120,80,30,.22)}
+.paper + .paper{margin-top:24px}
+.paper h1{font-size:clamp(28px,7vw,40px);color:#4b2c10;margin:0 0 8px}
+.paper h2{font-size:21px;color:#4b2c10;margin:26px 0 6px;padding-top:14px;border-top:1px dashed rgba(75,44,16,.3)}
+.paper p,.paper li{font-size:16px;line-height:1.65}
+.paper a{color:#9a4f0c}
+.paper small{color:#6b5a48}
+.paper .stores{margin:18px 0 10px}
+
+@media (min-width:720px){
+  :root{--gutter:28px}
+  section{padding:88px 0}
+  .steps{grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{grid-template-columns:1fr;gap:4px}
+  .after{grid-template-columns:repeat(3,1fr)}
+  .zones{grid-template-columns:repeat(2,1fr);gap:22px 34px}
+  .map{padding:30px 34px}
+  .modes{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+  .fair{grid-template-columns:1fr 1.1fr;gap:44px}
+  .maker{grid-template-columns:auto 1fr;gap:28px}
+  .hero-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px}
+  .hero-copy{min-width:0}
+  .wordmark{font-size:clamp(36px,5.4vw,78px)}
+  .app-icon{width:clamp(56px,9vw,120px)}
+  .phone{width:min(28vw,300px)}
+  .final-grid{grid-template-columns:1fr auto;gap:48px}
+  .paper{padding:40px 44px 24px}
+}
+@media (min-width:1000px){
+  .modes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .zones{grid-template-columns:repeat(4,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dust,.scroll-cue,.board{animation:none}
+  .dust{display:none}
+  .store,.dock{transition:none}
+}

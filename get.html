@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Silverbow – Download</title><meta name="theme-color" content="#0E1B2A"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="stylesheet" href="style.css">
+<script>
+// One link for the QR and for sharing: the phone's own store, the query passed on where the store
+// keeps it (Play's install referrer; Apple's campaign token).
+(function () {
+  var q = location.search.replace(/^\?/, "");
+  var ua = navigator.userAgent || "";
+  var apple = "https://apps.apple.com/app/id6830253870?pt=silverbow&ct=" + encodeURIComponent(q || "qr") + "&mt=8";
+  var play = "https://play.google.com/store/apps/details?id=com.nixare.silverbow&referrer=" + encodeURIComponent(q || "utm_source=qr");
+  if (/android/i.test(ua)) location.replace(play);
+  else if (/iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && "ontouchend" in document)) location.replace(apple);
+  window.__stores = { apple: apple, play: play };
+})();
+</script></head><body>
+<header class="page-top"><div class="wrap"><a class="brand" href="index.html"><img src="img/icon.webp" alt="" width="34" height="34">Silverbow</a>
+<nav aria-label="Pages / Pagine"><a href="index.html#support">Support</a><a href="privacy.html">Privacy</a></nav></div></header>
+<main class="doc">
+<article class="paper">
+<h1>Silverbow</h1>
+<p>Read the wind. Hit the gold. / Leggi il vento, fai centro.</p>
+<div class="stores">
+<a class="store" id="apple" href="https://apps.apple.com/app/id6830253870"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v7m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>App Store</small><b>iPhone</b></span></a>
+<a class="store" id="play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span><small>Google Play</small><b>Android</b></span></a>
+</div>
+</article>
+<script>if (window.__stores) { document.getElementById("apple").href = __stores.apple; document.getElementById("play").href = __stores.play; }</script>
+</main>
+<footer><div class="wrap"><nav aria-label="Pages / Pagine"><a href="index.html">Silverbow</a><a href="privacy.html">Privacy</a></nav><span>© 2026 Nicola Aresta</span></div></footer>
+</body></html>

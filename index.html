@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Silverbow – Read the wind. Hit the gold.</title>
+<meta name="description" content="Silverbow: archery the way it feels. Draw with one finger, read the wind, release on the still moment of your breath. Sixty levels in twelve places. Free for iPhone and Android.">
+<meta name="theme-color" content="#0E1B2A">
+<link rel="canonical" href="https://nixare.github.io/silverbow-site/">
+<meta property="og:title" content="Silverbow – Read the wind. Hit the gold.">
+<meta property="og:description" content="Archery the way it feels: draw, read the wind, release. Sixty levels in twelve places, free.">
+<meta property="og:image" content="https://nixare.github.io/silverbow-site/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://nixare.github.io/silverbow-site/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6830253870">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/Cinzel.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+// English first, as in the game; an Italian browser, #it or the switch shows the Italian.
+(function () {
+  var d = document.documentElement, h = location.hash, it = h === "#it";
+  try { var s = localStorage.getItem("lang"); if (h === "#it" || h === "#en") it = h === "#it"; else if (s) it = s === "it"; else it = /^it\b/i.test(navigator.language || "en"); } catch (e) {}
+  if (it) { d.classList.add("it"); d.lang = "it"; }
+  // The visitor's own store first: Android or Apple; a computer sees both and the QR.
+  var ua = navigator.userAgent || "";
+  if (/android/i.test(ua)) d.classList.add("android");
+  else if (/iphone|ipad|ipod/i.test(ua) || (/macintosh/i.test(ua) && "ontouchend" in document)) d.classList.add("apple");
+})();
+function setLang(l) {
+  var d = document.documentElement;
+  d.classList.toggle("it", l === "it");
+  d.lang = l;
+  try { localStorage.setItem("lang", l); } catch (e) {}
+  var v = document.getElementById("reel");
+  if (v) { var src = "img/reel_" + l + ".mp4"; if (v.getAttribute("src") !== src) { v.poster = "img/reel_" + l + ".webp"; v.src = src; v.play().catch(function () {}); } }
+}
+</script>
+</head>
+<body class="i18n">
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/icon.webp" alt="" width="34" height="34">Silverbow</a>
+    <div class="lang" role="group" aria-label="Language / Lingua">
+      <button type="button" data-l="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-l="it" onclick="setLang('it')">IT</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="title">
+  <div class="rings" aria-hidden="true"></div>
+  <div class="hills" aria-hidden="true"></div>
+  <div class="dust" aria-hidden="true"><i style="left:8%;animation-delay:0s"></i><i style="left:19%;animation-delay:5s"></i><i style="left:33%;animation-delay:2s"></i><i style="left:47%;animation-delay:9s"></i><i style="left:58%;animation-delay:4s"></i><i style="left:71%;animation-delay:11s"></i><i style="left:84%;animation-delay:7s"></i><i style="left:93%;animation-delay:1s"></i></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="title-row"><img class="app-icon" src="img/icon-hero.webp" alt="" width="128" height="128"><h1 class="wordmark" id="title"><span class="s">SILVER</span><span class="b">BOW</span></h1></div>
+      <p class="tagline"><span lang="en">Read the wind. Hit the gold.</span><span lang="it">Leggi il vento, fai centro.</span></p>
+      <p class="hook">
+        <span lang="en">Archery the way it feels: draw the string, read the wind and wait for the still moment of your breath. <em>Then let go.</em></span>
+        <span lang="it">Il tiro con l'arco come si sente davvero: tendi la corda, leggi il vento e aspetti il momento fermo del respiro. <em>Poi lasci.</em></span>
+      </p>
+      <ul class="chips" role="list">
+        <li><span lang="en">Free</span><span lang="it">Gratis</span></li>
+        <li><span lang="en">One finger</span><span lang="it">Un dito solo</span></li>
+        <li><span lang="en">60 levels, 12 places</span><span lang="it">60 livelli, 12 posti</span></li>
+        <li><span lang="en">No account, plays offline</span><span lang="it">Senza account, anche offline</span></li>
+      </ul>
+      <div class="stores" id="get">
+        <a class="store store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site&amp;mt=8">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v7m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><small lang="en">Free on the</small><small lang="it">Gratis su</small><b>App Store</b></span>
+        </a>
+        <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span><small lang="en">Free on</small><small lang="it">Gratis su</small><b>Google Play</b></span>
+        </a>
+      </div>
+    </div>
+    <div class="phone" aria-label="A level of Silverbow in the sunset canyon" role="img">
+      <video id="reel" src="img/reel_en.mp4" poster="img/reel_en.webp" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#how" aria-label="How it plays / Come si gioca"><span aria-hidden="true">↓</span></a>
+</section>
+<script>
+// The Italian reel for an Italian page, before it loads.
+if (document.documentElement.classList.contains("it")) { var r = document.getElementById("reel"); r.poster = "img/reel_it.webp"; r.src = "img/reel_it.mp4"; }
+</script>
+
+<section id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <p class="kicker"><span lang="en">How it plays</span><span lang="it">Come si gioca</span></p>
+    <h2 class="section-title" id="how-title"><span lang="en">One finger, three moves</span><span lang="it">Un dito, tre gesti</span></h2>
+    <p class="section-lede">
+      <span lang="en">The same for right- and left-handers, learned on the first arrow. No buttons to find while you aim: the middle of the screen is all field and sight.</span>
+      <span lang="it">Uguale per destri e mancini, si impara sulla prima freccia. Nessun bottone da cercare mentre miri: il centro dello schermo è solo campo e mirino.</span>
+    </p>
+    <div class="sign">
+      <div class="ropes" aria-hidden="true"><span></span><span></span></div>
+      <div class="board">
+        <ol class="steps" role="list">
+          <li class="step"><span class="n" aria-hidden="true">I</span><div>
+            <h3><span lang="en">Drag</span><span lang="it">Trascina</span></h3>
+            <p><span lang="en">Your finger turns the bow and the sight follows. Aim calmly: the string isn't drawn yet.</span><span lang="it">Il dito gira l'arco e il mirino lo segue. Punta con calma: la corda non è ancora tesa.</span></p></div></li>
+          <li class="step"><span class="n" aria-hidden="true">II</span><div>
+            <h3><span lang="en">Pause</span><span lang="it">Fermati</span></h3>
+            <p><span lang="en">Hold still and the bow draws itself, with the creak of the string. Hold too long and your arm shakes.</span><span lang="it">Fermo un attimo e l'arco si tende da solo, con lo scricchiolio della corda. Se aspetti troppo il braccio trema.</span></p></div></li>
+          <li class="step"><span class="n" aria-hidden="true">III</span><div>
+            <h3><span lang="en">Lift</span><span lang="it">Solleva</span></h3>
+            <p><span lang="en">Lift your finger and the arrow flies, the camera chasing it to the straw.</span><span lang="it">Sollevi il dito e la freccia parte, con la camera che la insegue fino alla paglia.</span></p></div></li>
+        </ol>
+      </div>
+    </div>
+    <div class="after">
+      <div class="note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <p><b><span lang="en">The wind.</span><span lang="it">Il vento.</span></b> <span lang="en">Flags, grass and the wind arrow tell you where it blows. Gusts come and go: aim into it.</span><span lang="it">Bandiere, erba e la freccia del vento dicono da dove soffia. Le raffiche vanno e vengono: mira controvento.</span></p></div>
+      <div class="note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        <p><b><span lang="en">The breath.</span><span lang="it">Il respiro.</span></b> <span lang="en">At full draw the sight settles for one still moment. Release there: a clean shot.</span><span lang="it">Ad arco teso il mirino si ferma per un solo momento. Rilascia lì: un tiro pulito.</span></p></div>
+      <div class="note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5c5 0 11 4 16 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/><path d="M17 19h3v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <p><b><span lang="en">The distance.</span><span lang="it">La distanza.</span></b> <span lang="en">From 10 to 70 metres. Far away the arrow drops: aim above the gold.</span><span lang="it">Da 10 a 70 metri. Da lontano la freccia cala: mira sopra il giallo.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="realms">
+  <div class="wrap">
+    <p class="kicker"><span lang="en">The Realms</span><span lang="it">Le Contrade</span></p>
+    <h2 class="section-title" id="realms"><span lang="en">Sixty levels, twelve places</span><span lang="it">Sessanta livelli, dodici posti</span></h2>
+    <p class="section-lede">
+      <span lang="en">Each place has its own light and its own life, and every level asks something different: a number of golds, never below a ring, beating an archer who has already shot, one arrow that counts, six against the clock.</span>
+      <span lang="it">Ogni posto ha la sua luce e la sua vita, e ogni livello chiede qualcosa di diverso: un numero di gialli, nessuna freccia sotto un anello, battere un arciere che ha già tirato, un solo tiro che vale tutto, sei frecce contro il tempo.</span>
+    </p>
+    <div class="map">
+      <ol class="zones" role="list" style="list-style:none">
+        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 1–15</span>
+          <h3><span lang="en">Morning Meadow</span><span lang="it">Prato del mattino</span></h3>
+          <p><span lang="en">Rabbits and butterflies, an orchard with swinging apples, a farm pond with ducks and a weathervane.</span><span lang="it">Conigli e farfalle, un frutteto con le mele che dondolano, un laghetto con le anatre e la banderuola.</span></p><div class="trail"></div></li>
+        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 16–30</span>
+          <h3><span lang="en">Windy Hill</span><span lang="it">Collina ventosa</span></h3>
+          <p><span lang="en">Windmills and sheep, a windy beach with gulls, sea cliffs with a lighthouse.</span><span lang="it">Mulini e pecore, una spiaggia ventosa con i gabbiani, la scogliera con il faro.</span></p><div class="trail"></div></li>
+        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 31–45</span>
+          <h3><span lang="en">Autumn Wood</span><span lang="it">Bosco d'autunno</span></h3>
+          <p><span lang="en">Falling leaves and a passing deer, a misty marsh with fireflies, a snowy forest with a smoking cabin.</span><span lang="it">Foglie che cadono e un cervo che passa, una palude nella nebbia con le lucciole, un bosco innevato con la baita.</span></p><div class="trail"></div></li>
+        <li class="zone"><span class="lv"><span lang="en">Levels</span><span lang="it">Livelli</span> 46–60</span>
+          <h3><span lang="en">Sunset Arena</span><span lang="it">Arena del tramonto</span></h3>
+          <p><span lang="en">A castle with torches in the wind, a red canyon with an eagle, an arena by night with the crowd.</span><span lang="it">Un castello con le torce nel vento, un canyon rosso con un'aquila, un'arena di notte con il pubblico.</span></p><div class="trail"></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="modes">
+  <div class="wrap">
+    <p class="kicker"><span lang="en">More to shoot at</span><span lang="it">Altro da colpire</span></p>
+    <h2 class="section-title" id="modes"><span lang="en">Bonus stages, Guardians, rivals</span><span lang="it">Bonus, Guardiani, rivali</span></h2>
+    <div class="modes">
+      <article class="mode red"><div>
+        <h3><span lang="en">Daily challenge</span><span lang="it">Sfida del giorno</span></h3>
+        <p><span lang="en">The same wind and distance for everyone, every day. Keep the streak going for bigger rewards.</span><span lang="it">Stesso vento e stessa distanza per tutti, ogni giorno. Tieni viva la serie per premi più grandi.</span></p></div></article>
+      <article class="mode blue"><div>
+        <h3><span lang="en">Compete</span><span lang="it">Gara</span></h3>
+        <p><span lang="en">A weekend tournament against four archers, one-on-one matches in sets, and challenges sent to friends with a link.</span><span lang="it">Un torneo nel weekend contro quattro arcieri, sfide uno contro uno a set, e sfide agli amici con un link.</span></p></div></article>
+      <article class="mode green"><div>
+        <h3><span lang="en">Bonus stages</span><span lang="it">Livelli bonus</span></h3>
+        <p><span lang="en">Balloons, clays, swinging apples, a carousel, wooden birds, a running deer and a very distant gong.</span><span lang="it">Palloncini, piattelli, mele che dondolano, una giostra, uccelli di legno, un cervo che corre e un gong lontanissimo.</span></p></div></article>
+      <article class="mode black"><div>
+        <h3><span lang="en">Guardians</span><span lang="it">Guardiani</span></h3>
+        <p><span lang="en">At the end of each zone a wheel of medallions turns: hit them as they light up, three times, and watch it fall.</span><span lang="it">Alla fine di ogni zona gira una ruota di medaglioni: colpiscili quando si accendono, tre volte, e guardala cadere.</span></p></div></article>
+      <article class="mode red"><div>
+        <h3>Robin Hood</h3>
+        <p><span lang="en">Hit the nock of the arrow already in the gold and split it in two. Combos set your arrows on fire.</span><span lang="it">Colpisci la cocca della freccia già nel giallo e aprila in due. Le combo danno fuoco alle frecce.</span></p></div></article>
+      <article class="mode blue"><div>
+        <h3><span lang="en">Armory</span><span lang="it">Armeria</span></h3>
+        <p><span lang="en">From a simple stave to the full olympic recurve, arrows that cut the wind, fletchings and special arrows.</span><span lang="it">Da una doga semplice all'olimpico completo, frecce che tagliano il vento, alette e frecce speciali.</span></p></div></article>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="look">
+  <div class="wrap">
+    <p class="kicker"><span lang="en">Inside the game</span><span lang="it">Dentro il gioco</span></p>
+    <h2 class="section-title" id="look"><span lang="en">Take a closer look</span><span lang="it">Guarda da vicino</span></h2>
+    <div class="strip" lang="en" tabindex="0" aria-label="Screenshots">
+      <figure><img src="img/shot_en_1.webp" alt="The home: a wooden sign to play, leather tiles for daily, compete, armory and train" width="460" height="1000" loading="lazy"><figcaption>The home</figcaption></figure>
+      <figure><img src="img/shot_en_2.webp" alt="Aiming at 45 metres in the sunset canyon, wind from the left" width="460" height="1000" loading="lazy"><figcaption>45 m in the canyon</figcaption></figure>
+      <figure><img src="img/shot_en_3.webp" alt="Robin Hood: an arrow splits the one already in the gold" width="460" height="1000" loading="lazy"><figcaption>Robin Hood!</figcaption></figure>
+      <figure><img src="img/shot_en_4.webp" alt="The Realms: levels as wax seals on an old parchment map" width="460" height="1000" loading="lazy"><figcaption>The Realms</figcaption></figure>
+      <figure><img src="img/shot_en_5.webp" alt="Bonus stage: a fairground carousel with eight small targets" width="460" height="1000" loading="lazy"><figcaption>The carousel</figcaption></figure>
+      <figure><img src="img/shot_en_6.webp" alt="The Armory: the bow on its stand, four bows to choose from" width="460" height="1000" loading="lazy"><figcaption>The Armory</figcaption></figure>
+      <figure><img src="img/shot_en_7.webp" alt="Compete: weekend tournament against four archers" width="460" height="1000" loading="lazy"><figcaption>Weekend tournament</figcaption></figure>
+    </div>
+    <div class="strip" lang="it" tabindex="0" aria-label="Schermate">
+      <figure><img src="img/shot_it_1.webp" alt="La home: l'insegna di legno per giocare, le caselle di cuoio per giorno, gara, armeria e allenamento" width="460" height="1000" loading="lazy"><figcaption>La home</figcaption></figure>
+      <figure><img src="img/shot_it_2.webp" alt="La mira a 45 metri nel canyon al tramonto" width="460" height="1000" loading="lazy"><figcaption>45 m nel canyon</figcaption></figure>
+      <figure><img src="img/shot_it_3.webp" alt="Robin Hood: una freccia apre in due quella già nel giallo" width="460" height="1000" loading="lazy"><figcaption>Robin Hood!</figcaption></figure>
+      <figure><img src="img/shot_it_4.webp" alt="Le Contrade: i livelli come sigilli di ceralacca su una mappa di pergamena" width="460" height="1000" loading="lazy"><figcaption>Le Contrade</figcaption></figure>
+      <figure><img src="img/shot_it_5.webp" alt="Livello bonus: la giostra con otto bersagli piccoli" width="460" height="1000" loading="lazy"><figcaption>La giostra</figcaption></figure>
+      <figure><img src="img/shot_it_6.webp" alt="L'Armeria: l'arco sul piedistallo, quattro archi fra cui scegliere" width="460" height="1000" loading="lazy"><figcaption>L'Armeria</figcaption></figure>
+      <figure><img src="img/shot_it_7.webp" alt="Gara: il torneo del weekend contro quattro arcieri" width="460" height="1000" loading="lazy"><figcaption>Il torneo del weekend</figcaption></figure>
+    </div>
+    <p class="strip-hint" aria-hidden="true"><span lang="en">Swipe →</span><span lang="it">Scorri →</span></p>
+  </div>
+</section>
+
+<section aria-labelledby="fair">
+  <div class="wrap fair">
+    <div>
+      <p class="kicker"><span lang="en">Free and fair</span><span lang="it">Gratis e onesto</span></p>
+      <h2 class="section-title" id="fair"><span lang="en">Earned, not bought</span><span lang="it">Si guadagna, non si compra</span></h2>
+      <ul>
+        <li><span><span lang="en">Everything that improves your shot is earned by playing: coins buy steadier bows and arrows that cut the wind.</span><span lang="it">Tutto ciò che migliora il tiro si guadagna giocando: le monete comprano archi più stabili e frecce che tagliano il vento.</span></span></li>
+        <li><span><span lang="en">No banners, no forced ads. A video only when you choose one, for a reward.</span><span lang="it">Niente banner, niente pubblicità forzata. Un video solo quando lo scegli tu, in cambio di un premio.</span></span></li>
+        <li><span><span lang="en">No account, no energy, no timers to wait out. It plays offline.</span><span lang="it">Niente account, niente energia, niente attese. Si gioca anche offline.</span></span></li>
+      </ul>
+    </div>
+    <figure class="pass">
+      <img src="img/pass.webp" alt="The two Archer Pass fletchings, crossed" width="880" height="600" loading="lazy">
+      <figcaption>
+        <h3><span lang="en">Archer Pass</span><span lang="it">Pass Arciere</span></h3>
+        <p><span lang="en">One optional purchase, for looks only: rewards without videos, two exclusive fletchings, the Silver Archer badge.</span><span lang="it">Un solo acquisto facoltativo, solo estetico: premi senza video, due alette esclusive, il badge Arciere d'argento.</span></p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final">
+  <div class="wrap final-grid">
+    <div>
+      <h2 class="section-title" id="final"><span lang="en">The first target is waiting</span><span lang="it">Il primo bersaglio ti aspetta</span></h2>
+      <p class="section-lede"><span lang="en">Free on iPhone and Android. No account: open it and shoot.</span><span lang="it">Gratis su iPhone e Android. Nessun account: apri e tira.</span></p>
+      <div class="stores">
+        <a class="store store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site&amp;mt=8">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v7m-3-3 3 3 3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><small lang="en">Free on the</small><small lang="it">Gratis su</small><b>App Store</b></span>
+        </a>
+        <a class="store store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5v17l14-8.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span><small lang="en">Free on</small><small lang="it">Gratis su</small><b>Google Play</b></span>
+        </a>
+      </div>
+    </div>
+    <figure class="qr">
+      <img src="img/qr.svg" alt="QR code to download Silverbow" width="164" height="164" loading="lazy">
+      <figcaption><span lang="en">Scan it with your phone</span><span lang="it">Inquadralo col telefono</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section aria-labelledby="maker">
+  <div class="wrap maker">
+    <img src="img/icon.webp" alt="" width="96" height="96" loading="lazy">
+    <div>
+      <p class="kicker" id="maker"><span lang="en">Who makes it</span><span lang="it">Chi lo fa</span></p>
+      <blockquote>
+        <span lang="en">Made by <span class="hl">one developer</span> in Italy: every place, every bow and every sound built by hand. The sounds are synthesised as you play.</span>
+        <span lang="it">Fatto da <span class="hl">uno sviluppatore solo</span>, in Italia: ogni posto, ogni arco e ogni suono costruiti a mano. I suoni nascono mentre giochi.</span>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="support" aria-labelledby="support-title">
+  <div class="wrap">
+    <div class="card">
+      <h2 id="support-title"><span lang="en">Support</span><span lang="it">Supporto</span></h2>
+      <p><span lang="en">Questions, problems or ideas? Write to us. Include your device model, system version and, if you can, what you were doing when the problem appeared.</span><span lang="it">Domande, problemi o idee? Scrivici. Indica il modello del dispositivo, la versione del sistema e, se puoi, cosa stavi facendo quando è comparso il problema.</span></p>
+      <p><a class="mail" href="mailto:aresta.nicola@gmail.com?subject=Silverbow">aresta.nicola@gmail.com</a></p>
+      <p><span lang="en">Your progress lives on your phone. Bought the Archer Pass on a new phone? Open the Archer Pass and tap <em>Restore purchases</em>.</span><span lang="it">I progressi stanno sul telefono. Hai comprato il Pass Arciere e cambiato telefono? Apri il Pass Arciere e tocca <em>Ripristina acquisti</em>.</span></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- On a phone, once the hero's buttons are past: one bar with the phone's own store. -->
+<div class="dock" id="dock" aria-hidden="true">
+  <img src="img/icon.webp" alt="" width="40" height="40">
+  <div><b>Silverbow</b><small><span lang="en">Read the wind. Hit the gold. · Free</span><span lang="it">Leggi il vento, fai centro · Gratis</span></small></div>
+  <a class="dock-get store-apple" href="https://apps.apple.com/app/id6830253870?pt=silverbow&amp;ct=site_dock&amp;mt=8" tabindex="-1"><span lang="en">Get it</span><span lang="it">Scarica</span></a>
+  <a class="dock-get store-play" href="https://play.google.com/store/apps/details?id=com.nixare.silverbow&amp;referrer=utm_source%3Dsite_dock" tabindex="-1"><span lang="en">Get it</span><span lang="it">Scarica</span></a>
+</div>
+<script>
+(function () {
+  var dock = document.getElementById("dock"), get = document.getElementById("get");
+  if (!("IntersectionObserver" in window) || !dock || !get) return;
+  new IntersectionObserver(function (e) {
+    var on = !e[0].isIntersecting && e[0].boundingClientRect.top < 0;
+    dock.classList.toggle("on", on);
+    dock.setAttribute("aria-hidden", on ? "false" : "true");
+    dock.querySelectorAll("a").forEach(function (a) { a.tabIndex = on ? 0 : -1; });
+  }).observe(get);
+  var v = document.getElementById("reel");
+  if (v && window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Pages / Pagine">
+      <a href="privacy.html">Privacy</a>
+      <a href="#support"><span lang="en">Support</span><span lang="it">Supporto</span></a>
+    </nav>
+    <span>© 2026 Nicola Aresta</span>
+  </div>
+</footer>
+</body>
+</html>
